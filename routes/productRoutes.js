@@ -6,10 +6,13 @@ const Product = require("../model/Product");
 router.get("/products", async (req, res) => {
     try {
         const products = await Product.find({});
+        console.log("Retrieved products:", products);
         res.status(200).json(products);
     } catch (error) {
         res.status(500).json({
-            message: "Error retrieving products",
+            message:
+                error?.error?.message ||
+                "Error retrieving products from the database",
             error: error?.error?.message,
         });
     }
