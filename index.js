@@ -12,7 +12,7 @@ const PORT =process.env.PORT;
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://shippin-go-client.vercel.app/",
+    origin: "https://shoppin-go.vercel.app",
   })
 );
 // MongoDB connection
